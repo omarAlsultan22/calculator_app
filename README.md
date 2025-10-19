@@ -1,6 +1,37 @@
-# calcolatar
+## Basic Calculator App (Flutter)
 
-"A new Flutter project."
+🧮 A minimal calculator performing essential arithmetic operations with a custom UI
+
+## 🔢 Strictly Limited Functionality
+
+• Only Basic Operations:
+
+• Addition (+)
+
+• Subtraction (-)
+
+• Multiplication (×)
+
+• Division (÷)
+
+• Remainder (%)
+
+## 🎨 Custom UI Implementation
+
+• Built purely with Flutter widgets (no external packages)
+
+• Unique button arrangement and display styling
+
+• No scientific/memory functions
+
+## 📱 Pure Implementation
+
+• Single-screen widget tree
+
+• Zero dependencies
+
+• Direct math operations only
+
 
 ## Getting Started
 
