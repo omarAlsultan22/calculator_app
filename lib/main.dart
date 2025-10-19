@@ -1,8 +1,17 @@
+import 'package:calculator/shared/cubit/cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'modules/calculator_screen.dart';
 import 'package:flutter/material.dart';
-import 'calculator.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      MultiBlocProvider(providers: [
+        BlocProvider(
+            create: (context) =>
+                CalculatorCubit())
+      ], child: const MyApp(),)
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,8 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Calculator(),
+      home: CalculatorScreen(),
     );
   }
 }
+
+
 
