@@ -2,8 +2,8 @@ import 'package:calculator/models/operators_model.dart';
 import 'package:calculator/shared/cubit/cubit.dart';
 import 'package:calculator/shared/cubit/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../models/operators_states_models.dart';
-import '../models/processes_states_models.dart';
+import 'operators_states.dart';
+import 'processes_states.dart';
 import 'package:flutter/material.dart';
 
 

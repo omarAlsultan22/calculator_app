@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import '../shared/cubit/cubit.dart';
-import 'operators_model.dart';
+import '../models/operators_model.dart';
+
 
 class Clear extends Operators {
   Clear({super.value});
