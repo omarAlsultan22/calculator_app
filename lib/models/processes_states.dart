@@ -1,7 +1,7 @@
 import 'package:calculator/models/processes_model.dart';
 import 'package:calculator/shared/cubit/cubit.dart';
 import 'package:flutter/material.dart';
-import '../models/operators_model.dart';
+import 'operators_model.dart';
 
 
 class Multiplication extends Operators implements Processes{
