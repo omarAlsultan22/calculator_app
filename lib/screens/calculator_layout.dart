@@ -2,8 +2,8 @@ import 'package:calculator/models/operators_model.dart';
 import 'package:calculator/shared/cubit/states.dart';
 import 'package:calculator/shared/cubit/cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../models/operators_states.dart';
-import '../models/processes_states.dart';
+import '../usecases/operators_states.dart';
+import '../usecases/processes_states.dart';
 import 'package:flutter/material.dart';
 
 
@@ -107,8 +107,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           _buildButtonRow([
             Clear(value: 'C'),
             Parentheses(value: '()'),
-            Mod(value: '%'),
-            Divide(value: '/'),
+            Modulus(value: '%'),
+            Division(value: '/'),
           ], [
             Colors.red.shade700,
             Colors.blue.shade900,
@@ -132,7 +132,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             const Number(value: '4'),
             const Number(value: '5'),
             const Number(value: '6'),
-            Munse(value: '-'),
+            Subtraction(value: '-'),
           ], [
             Colors.amber,
             Colors.amber,

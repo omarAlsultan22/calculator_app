@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import '../models/operators_model.dart';
+import 'package:flutter/cupertino.dart';
 import '../shared/cubit/cubit.dart';
 
 

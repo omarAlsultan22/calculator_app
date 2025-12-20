@@ -1,7 +1,7 @@
 import 'package:calculator/models/processes_model.dart';
 import 'package:calculator/shared/cubit/cubit.dart';
+import '../models/operators_model.dart';
 import 'package:flutter/material.dart';
-import 'operators_model.dart';
 
 
 class Multiplication extends Operators implements Processes{
@@ -20,18 +20,18 @@ class Multiplication extends Operators implements Processes{
 }
 
 
-class Divide extends Operators implements Processes{
-  Divide({super.value});
+class Division extends Operators implements Processes{
+  Division({super.value});
 
   @override
   void operator(BuildContext context) {
-    CalculatorCubit.get(context).getProcessOperator(Divide());
+    CalculatorCubit.get(context).getProcessOperator(Division());
   }
 
   @override
   String process(double n1, double n2) {
     if(n2 == 0){
-      Exception('Can not be divide on zero');
+      Exception('Cannot divide by zero');
     }
     final result =  (n1 / n2).toString();
     return doesDecimalContain(result);
@@ -39,12 +39,12 @@ class Divide extends Operators implements Processes{
 }
 
 
-class Munse extends Operators implements Processes{
-  Munse({super.value});
+class Subtraction extends Operators implements Processes{
+  Subtraction({super.value});
 
   @override
   void operator(BuildContext context) {
-    CalculatorCubit.get(context).getProcessOperator(Munse());
+    CalculatorCubit.get(context).getProcessOperator(Subtraction());
   }
 
   @override
@@ -70,12 +70,12 @@ class Addition extends Operators implements Processes{
 }
 
 
-class Mod extends Operators implements Processes{
-  Mod({super.value});
+class Modulus extends Operators implements Processes{
+  Modulus({super.value});
 
   @override
   void operator(BuildContext context) {
-    CalculatorCubit.get(context).getProcessOperator(Mod());
+    CalculatorCubit.get(context).getProcessOperator(Modulus());
   }
 
   @override

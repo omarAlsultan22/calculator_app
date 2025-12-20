@@ -1,6 +1,6 @@
 import 'package:calculator/shared/cubit/cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'modules/calculator_screen.dart';
+import 'screens/calculator_layout.dart';
 import 'package:flutter/material.dart';
 
 
