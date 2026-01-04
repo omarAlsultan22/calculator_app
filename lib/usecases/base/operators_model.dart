@@ -7,7 +7,7 @@ abstract class Operators {
 
   const Operators({this.value, this.process});
 
-  String operator(CalculatorModel calculatorModel);
+  CalculatorModel operator(CalculatorModel calculatorModel);
 }
 
 

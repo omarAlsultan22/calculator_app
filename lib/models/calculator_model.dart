@@ -44,14 +44,16 @@ class CalculatorModel {
     );
   }
 
-  void clear() {
-    n1 = 0.0;
-    n2 = 0.0;
-    opr = '';
-    result = '';
-    finalResult = '0';
-    isNegative = false;
-    processes = null;
-    isParenthesisOpen = false;
+  CalculatorModel clear() {
+    return CalculatorModel(
+        n1: 0.0,
+        n2: 0.0,
+        opr: '',
+        result: '',
+        finalResult: '0',
+        isNegative: false,
+        processes: null,
+        isParenthesisOpen: false
+    );
   }
 }

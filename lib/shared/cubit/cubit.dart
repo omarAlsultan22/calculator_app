@@ -5,7 +5,7 @@ import '../states/states.dart';
 
 
 class CalculatorCubit extends Cubit<CalculatorStates> {
-  CalculatorModel? calculatorModel;
+  CalculatorModel calculatorModel;
 
   CalculatorCubit({required this.calculatorModel}) : super(InitialState());
 
@@ -14,8 +14,9 @@ class CalculatorCubit extends Cubit<CalculatorStates> {
 
   void getButtonResult(Operators operators) {
     try {
-      final result = operators.operator(calculatorModel!);
-      emit(SuccessState(value: result));
+      final result = operators.operator(calculatorModel);
+      calculatorModel = result;
+      emit(SuccessState(value: calculatorModel.finalResult));
     }
     catch (e) {
       emit(ErrorState(value: e.toString()));
