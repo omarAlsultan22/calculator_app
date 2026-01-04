@@ -7,13 +7,11 @@ import '../usecases/states/processes_states.dart';
 
 class CalculatorLayout extends StatelessWidget {
   final String displayValue;
-  final Function(Operators) onOperatorPressed;
   final Widget Function(BuildContext, Operators) buttonBuilder;
 
   const CalculatorLayout({
     Key? key,
     required this.displayValue,
-    required this.onOperatorPressed,
     required this.buttonBuilder,
   }) : super(key: key);
 

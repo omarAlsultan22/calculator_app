@@ -19,7 +19,6 @@ class CalculatorScreen extends StatelessWidget {
         return Scaffold(
           body: CalculatorLayout(
             displayValue: (state is SuccessState)? state.value! : '0',
-            onOperatorPressed: (op) => _onOperatorPressed(op, context),
             buttonBuilder: (context, operator) =>
                 _calculatorButton(
                   operator,
