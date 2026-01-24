@@ -1,4 +1,4 @@
-import 'package:calculator/usecases/base/processes_model.dart';
+import '../../domain/usecases/base/processes_model.dart';
 
 
 class CalculatorModel {

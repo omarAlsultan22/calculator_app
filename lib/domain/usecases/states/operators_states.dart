@@ -1,5 +1,5 @@
-import '../../models/calculator_model.dart';
 import '../base/operators_model.dart';
+import '../../../data/models/calculator_model.dart';
 
 
 class Clear extends Operators {

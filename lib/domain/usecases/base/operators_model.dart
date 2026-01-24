@@ -1,5 +1,6 @@
-import 'package:calculator/models/calculator_model.dart';
-import 'package:calculator/usecases/base/processes_model.dart';
+import '../../../data/models/calculator_model.dart';
+import 'package:calculator/domain/usecases/base/processes_model.dart';
+
 
 abstract class Operators {
   final String? value;

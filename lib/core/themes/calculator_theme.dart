@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/app_constants.dart';
-import '../usecases/base/operators_model.dart';
-import '../usecases/states/operators_states.dart';
+import '../../domain/usecases/base/operators_model.dart';
+import '../../domain/usecases/states/operators_states.dart';
 
 
 class CalculatorTheme {
