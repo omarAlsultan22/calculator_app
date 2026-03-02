@@ -56,9 +56,10 @@ class Modulus implements Processes{
 
 
 String doesDecimalContain(dynamic result) {
-  if(result.toString().contains('.')) {
-    List<String> splitDecimal = result.toString().split('.');
-    if(!(int.parse(splitDecimal[1]) > 0)) {
+  const dot = '.';
+  if (result.toString().contains(dot)) {
+    List<String> splitDecimal = result.toString().split(dot);
+    if (!(int.parse(splitDecimal[1]) > 0)) {
       return result = splitDecimal[0].toString();
     }
   }

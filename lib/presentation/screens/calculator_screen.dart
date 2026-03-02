@@ -13,12 +13,13 @@ class CalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const zero = '0';
     return BlocConsumer<CalculatorCubit, CalculatorStates>(
       listener: (context, state) => _statesListener(context, state),
       builder: (context, state) {
         return Scaffold(
           body: CalculatorLayout(
-            displayValue: (state is SuccessState)? state.value! : '0',
+            displayValue: (state is SuccessState)? state.value! : zero,
             buttonBuilder: (context, operator) =>
                 _calculatorButton(
                   operator,

@@ -30,7 +30,7 @@ class CalculatorModel {
     String? finalResult,
     bool? isNegative,
     bool? isParenthesisOpen,
-    Processes? processesModel,
+    Processes? processes,
   }) {
     return CalculatorModel(
         n1: n1 ?? this.n1,
@@ -39,7 +39,7 @@ class CalculatorModel {
         result: result ?? this.result,
         finalResult: finalResult ?? this.finalResult,
         isNegative: isNegative ?? this.isNegative,
-        processes: processesModel ?? this.processes,
+        processes: processes ?? this.processes,
         isParenthesisOpen: isParenthesisOpen ?? this.isParenthesisOpen
     );
   }

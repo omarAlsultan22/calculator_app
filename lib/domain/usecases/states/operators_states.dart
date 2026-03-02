@@ -33,16 +33,18 @@ class Parentheses extends Operators {
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
+    const openBracket = ')';
+    const closedBracket = '(';
     final result = calculatorModel.finalResult;
     var finalResult = result!;
     final isParenthesisOpen = calculatorModel.isParenthesisOpen;
 
     if (isParenthesisOpen!) {
-      finalResult += ')';
+      finalResult += openBracket;
       return calculatorModel.copyWith(
           isParenthesisOpen: false, finalResult: finalResult);
     } else {
-      finalResult += '(';
+      finalResult += closedBracket;
       return calculatorModel.copyWith(
           isParenthesisOpen: true, finalResult: finalResult);
     }
@@ -54,17 +56,19 @@ class PlusMunsSign extends Operators {
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
+    const zero = '0';
+    const dash = '-';
     var isNegative = calculatorModel.isNegative!;
     var finalResult = calculatorModel.finalResult!;
 
-    if (finalResult != '0') {
+    if (finalResult != zero) {
       isNegative = !isNegative;
       if (isNegative) {
-        finalResult = '-$finalResult';
+        finalResult = '$dash$finalResult';
         return calculatorModel.copyWith(
             isNegative: isNegative, finalResult: finalResult);
       } else {
-        if (finalResult.startsWith('-')) {
+        if (finalResult.startsWith(dash)) {
           finalResult = finalResult.substring(1);
           return calculatorModel.copyWith(
               isNegative: isNegative, finalResult: finalResult);
@@ -84,7 +88,7 @@ class Operator extends Operators {
     final n1 = calculatorModel.n1!;
 
     if (n1 != 0.0) {
-      return calculatorModel.copyWith(processesModel: process, result: '');
+      return calculatorModel.copyWith(processes: process, result: '');
     }
     return calculatorModel;
   }
