@@ -3,6 +3,7 @@ import '../../../data/models/calculator_model.dart';
 
 
 class Clear extends Operators {
+  const Clear();
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
@@ -12,6 +13,7 @@ class Clear extends Operators {
 
 
 class Equal extends Operators {
+  const Equal();
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
@@ -30,21 +32,20 @@ class Equal extends Operators {
 
 
 class Parentheses extends Operators {
+  const Parentheses();
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
-    const openBracket = ')';
-    const closedBracket = '(';
     final result = calculatorModel.finalResult;
     var finalResult = result!;
     final isParenthesisOpen = calculatorModel.isParenthesisOpen;
 
     if (isParenthesisOpen!) {
-      finalResult += openBracket;
+      finalResult += ')';
       return calculatorModel.copyWith(
           isParenthesisOpen: false, finalResult: finalResult);
     } else {
-      finalResult += closedBracket;
+      finalResult += '(';
       return calculatorModel.copyWith(
           isParenthesisOpen: true, finalResult: finalResult);
     }
@@ -53,15 +54,15 @@ class Parentheses extends Operators {
 
 
 class PlusMunsSign extends Operators {
+  const PlusMunsSign();
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
-    const zero = '0';
     const dash = '-';
     var isNegative = calculatorModel.isNegative!;
     var finalResult = calculatorModel.finalResult!;
 
-    if (finalResult != zero) {
+    if (finalResult != '0') {
       isNegative = !isNegative;
       if (isNegative) {
         finalResult = '$dash$finalResult';
@@ -81,7 +82,7 @@ class PlusMunsSign extends Operators {
 
 
 class Operator extends Operators {
-  Operator({super.process});
+  const Operator({super.process});
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {

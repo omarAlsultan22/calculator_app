@@ -63,10 +63,10 @@ class CalculatorLayout extends StatelessWidget {
         _buildButtonRow(
             context,
             [
-              Clear(),
-              Parentheses(),
-              Operator(process: Modulus()),
-              Operator(process: Division()),
+              const Clear(),
+              const Parentheses(),
+              const Operator(process: Modulus()),
+              const Operator(process: Division()),
             ]
         ),
         AppConstants.sizedBox,
@@ -76,7 +76,7 @@ class CalculatorLayout extends StatelessWidget {
               const Number(value: '7'),
               const Number(value: '8'),
               const Number(value: '9'),
-              Operator(process: Multiplication()),
+              const Operator(process: Multiplication()),
             ]
         ),
         AppConstants.sizedBox,
@@ -86,7 +86,7 @@ class CalculatorLayout extends StatelessWidget {
               const Number(value: '4'),
               const Number(value: '5'),
               const Number(value: '6'),
-              Operator(process: Subtraction()),
+              const Operator(process: Subtraction()),
             ]
         ),
         AppConstants.sizedBox,
@@ -96,17 +96,17 @@ class CalculatorLayout extends StatelessWidget {
             const Number(value: '1'),
             const Number(value: '2'),
             const Number(value: '3'),
-            Operator(process: Addition()),
+            const Operator(process: Addition()),
           ],
         ),
         AppConstants.sizedBox,
         _buildButtonRow(
             context,
             [
-              PlusMunsSign(),
+              const PlusMunsSign(),
               const Number(value: '0'),
               const Number(value: '.'),
-              Equal(),
+              const Equal(),
             ]
         ),
         AppConstants.sizedBox,
