@@ -18,16 +18,16 @@ class CalculatorLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.grey[850]!,
-            Colors.grey[900]!,
+            Color(0xFF303030),
+            Color(0xFF212121),
             Colors.black,
           ],
-          stops: const [0.0, 0.5, 1.0],
+          stops: [0.0, 0.5, 1.0],
         ),
       ),
       child: Column(

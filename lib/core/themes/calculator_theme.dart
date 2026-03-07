@@ -7,9 +7,9 @@ import '../../domain/usecases/states/operators_states.dart';
 class CalculatorTheme {
   static Color getButtonColor(Operators operator) {
     switch (operator.runtimeType) {
-      case Clear: return Colors.red.shade700;
-      case Equal: return Colors.green.shade700;
-      case Operator: return Colors.blue.shade900;
+      case Clear: return const Color(0xFFD32F2F);
+      case Equal: return const Color(0xFF388E3C);
+      case Operator: return const Color(0xFF0D47A1);
       case Number: return Colors.amber;
       default: return Colors.grey;
     }

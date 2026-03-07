@@ -7,7 +7,9 @@ import '../../domain/usecases/base/operators_model.dart';
 class CalculatorCubit extends Cubit<CalculatorStates> {
   final CalculatorModel _calculatorModel;
 
-  CalculatorCubit({required CalculatorModel calculatorModel}) :  _calculatorModel = calculatorModel ,super(InitialState());
+  CalculatorCubit({required CalculatorModel calculatorModel})
+      : _calculatorModel = calculatorModel,
+        super(InitialState());
 
   static CalculatorCubit get(context) => BlocProvider.of(context);
 
