@@ -1,5 +1,4 @@
 import 'package:calculator/core/constants/app_constants.dart';
-
 import '../../domain/usecases/base/processes_model.dart';
 
 
@@ -13,15 +12,20 @@ class CalculatorModel {
   bool? isParenthesisOpen;
   Processes? processes;
 
-  static const _zero = AppConstants.zero;
+  //texts
+  static const _empty = AppConstants.empty;
+
+  //numbers
+  static const _decimalNumber = 0.0;
+  static const _correctNumber = AppConstants.zero;
 
   CalculatorModel({
-    this.n1 = 0.0,
-    this.n2 = 0.0,
-    this.opr = '',
-    this.result = '',
+    this.n1 = _decimalNumber,
+    this.n2 = _decimalNumber,
+    this.opr = AppConstants.empty,
+    this.result = _empty,
     this.processes,
-    this.finalResult = _zero,
+    String? finalResult = _correctNumber,
     this.isNegative = false,
     this.isParenthesisOpen = false,
   });
@@ -50,11 +54,11 @@ class CalculatorModel {
 
   CalculatorModel clear() {
     return CalculatorModel(
-        n1: 0.0,
-        n2: 0.0,
-        opr: '',
-        result: '',
-        finalResult: _zero,
+        n1: _decimalNumber,
+        n2: _decimalNumber,
+        opr: _empty,
+        result: _empty,
+        finalResult: _correctNumber,
         isNegative: false,
         processes: null,
         isParenthesisOpen: false

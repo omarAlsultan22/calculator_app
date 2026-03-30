@@ -41,9 +41,9 @@ class Parentheses extends Operators {
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
+    final isParenthesisOpen = calculatorModel.isParenthesisOpen;
     final result = calculatorModel.finalResult;
     var finalResult = result!;
-    final isParenthesisOpen = calculatorModel.isParenthesisOpen;
 
     if (isParenthesisOpen!) {
       finalResult += ')';
@@ -61,9 +61,10 @@ class Parentheses extends Operators {
 class PlusMunsSign extends Operators {
   const PlusMunsSign();
 
+  static const dash = '-';
+
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
-    const dash = '-';
     var isNegative = calculatorModel.isNegative!;
     var finalResult = calculatorModel.finalResult!;
 
@@ -93,8 +94,8 @@ class Operator extends Operators {
   CalculatorModel operator(CalculatorModel calculatorModel) {
     final n1 = calculatorModel.n1!;
 
-    if (n1 != 0.0) {
-      return calculatorModel.copyWith(processes: process, result: '');
+    if (n1 != 0) {
+      return calculatorModel.copyWith(processes: process, result: AppConstants.empty);
     }
     return calculatorModel;
   }

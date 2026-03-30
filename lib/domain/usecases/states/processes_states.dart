@@ -65,8 +65,9 @@ class Modulus implements Processes{
 
 
 abstract class Decimal {
+  static const decimal = '.';
+
   static String doesDecimalContain(dynamic result) {
-    const decimal = '.';
     if (result.toString().contains(decimal)) {
       List<String> splitDecimal = result.toString().split(decimal);
       if (!(int.parse(splitDecimal[1]) > 0)) {

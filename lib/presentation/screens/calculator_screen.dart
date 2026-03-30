@@ -22,9 +22,9 @@ class CalculatorScreen extends StatelessWidget {
                 .zero,
             buttonBuilder: (context, operator) =>
                 _calculatorButton(
-                  operator,
-                  context,
-                  CalculatorTheme.getButtonColor(operator),
+                  operators: operator,
+                  context: context,
+                  backgroundColor: CalculatorTheme.getButtonColor(operator),
                 ),
           ),
         );
@@ -48,14 +48,16 @@ class CalculatorScreen extends StatelessWidget {
     cubit.getButtonResult(operators);
   }
 
-  Widget _calculatorButton(Operators operators,
-      BuildContext context,
-      Color backgroundColor,) {
+  Widget _calculatorButton({
+    required Operators operators,
+    required BuildContext context,
+    required Color backgroundColor
+  }) {
     return MaterialButton(
       onPressed: () => _onOperatorPressed(operators, context),
       color: backgroundColor,
       shape: const CircleBorder(),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20.0),
       child: Text(
         operators.value!,
         style: const TextStyle(
