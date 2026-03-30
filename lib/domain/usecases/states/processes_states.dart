@@ -17,11 +17,16 @@ class Division implements Processes {
 
   @override
   String process(double n1, double n2) {
-    if (n2 == 0) {
-      throw const FormatException('Can’t divide by zero');
+    try {
+      if (n2 == 0) {
+        throw const FormatException('Can’t divide by zero');
+      }
+      final result = (n1 / n2).toString();
+      return Decimal.doesDecimalContain(result);
     }
-    final result = (n1 / n2).toString();
-    return Decimal.doesDecimalContain(result);
+    catch (e) {
+      rethrow;
+    }
   }
 }
 

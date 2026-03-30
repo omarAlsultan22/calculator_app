@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class AppConstants {
+  static const zero = '0';
+
   //Text Fonts
   static const double buttonFontSize = 25.0;
   static const double displayFontSize = 50.0;

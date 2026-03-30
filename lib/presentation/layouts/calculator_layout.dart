@@ -116,8 +116,8 @@ class CalculatorLayout extends StatelessWidget {
 
   Widget _buildButtonRow(BuildContext context, List<Operators> operators) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: operators.map((op) => buttonBuilder(context, op)).toList()
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: operators.map((op) => buttonBuilder(context, op)).toList()
     );
   }
 }

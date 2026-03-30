@@ -18,7 +18,8 @@ class CalculatorScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: CalculatorLayout(
-            displayValue: (state is SuccessState)? state.value! : '0',
+            displayValue: (state is SuccessState) ? state.value! : AppConstants
+                .zero,
             buttonBuilder: (context, operator) =>
                 _calculatorButton(
                   operator,
@@ -31,7 +32,6 @@ class CalculatorScreen extends StatelessWidget {
     );
   }
 
-
   void _statesListener(BuildContext context, CalculatorStates state) {
     if (state is ErrorState) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -43,12 +43,10 @@ class CalculatorScreen extends StatelessWidget {
     }
   }
 
-
   void _onOperatorPressed(Operators operators, BuildContext context) {
     final cubit = CalculatorCubit.get(context);
     cubit.getButtonResult(operators);
   }
-
 
   Widget _calculatorButton(Operators operators,
       BuildContext context,

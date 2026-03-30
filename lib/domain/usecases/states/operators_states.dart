@@ -1,5 +1,6 @@
 import '../base/operators_model.dart';
 import '../../../data/models/calculator_model.dart';
+import 'package:calculator/core/constants/app_constants.dart';
 
 
 class Clear extends Operators {
@@ -7,7 +8,7 @@ class Clear extends Operators {
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
-      return calculatorModel.clear();
+    return calculatorModel.clear();
   }
 }
 
@@ -17,7 +18,6 @@ class Equal extends Operators {
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
-
     final n1 = calculatorModel.n1;
     final n2 = calculatorModel.n2;
     final processes = calculatorModel.processes;
@@ -25,8 +25,13 @@ class Equal extends Operators {
     if (n1 == null || n2 == null || processes == null) {
       return calculatorModel;
     }
-     final finalResult = processes.process(n1, n2);
+    try {
+      final finalResult = processes.process(n1, n2);
       return calculatorModel.copyWith(finalResult: finalResult);
+    }
+    catch (e) {
+      rethrow;
+    }
   }
 }
 
@@ -62,7 +67,7 @@ class PlusMunsSign extends Operators {
     var isNegative = calculatorModel.isNegative!;
     var finalResult = calculatorModel.finalResult!;
 
-    if (finalResult != '0') {
+    if (finalResult != AppConstants.zero) {
       isNegative = !isNegative;
       if (isNegative) {
         finalResult = '$dash$finalResult';
