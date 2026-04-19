@@ -4,7 +4,7 @@ import '../../domain/usecases/base/operators_model.dart';
 import '../../domain/usecases/states/operators_states.dart';
 
 
-class CalculatorTheme {
+mixin CalculatorTheme {
   static Color getButtonColor(Operators operator) {
     switch (operator.runtimeType) {
       case Clear: return const Color(0xFFD32F2F);

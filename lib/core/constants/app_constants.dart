@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class AppConstants {
+mixin AppConstants {
   //texts
   static const zero = '0';
   static const empty = '';
