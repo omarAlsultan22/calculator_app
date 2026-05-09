@@ -3,9 +3,9 @@ import '../states/states.dart';
 import 'package:flutter/material.dart';
 import '../layouts/calculator_layout.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../core/constants/app_constants.dart';
 import '../../core/themes/calculator_theme.dart';
 import '../../domain/usecases/base/operators_model.dart';
+import 'package:calculator/core/constants/app_strings.dart';
 
 
 class CalculatorScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class CalculatorScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: CalculatorLayout(
-            displayValue: (state is SuccessState) ? state.value! : AppConstants
+            displayValue: (state is SuccessState) ? state.value! : AppStrings
                 .zero,
             buttonBuilder: (context, operator) =>
                 _calculatorButton(
@@ -60,11 +60,7 @@ class CalculatorScreen extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Text(
         operators.value!,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: AppConstants.buttonFontSize,
-          color: AppConstants.textColor,
-        ),
+        style: CalculatorTheme.buttonStyle,
       ),
     );
   }

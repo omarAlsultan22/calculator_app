@@ -1,6 +1,6 @@
 import '../base/operators_model.dart';
 import '../../../data/models/calculator_model.dart';
-import 'package:calculator/core/constants/app_constants.dart';
+import 'package:calculator/core/constants/app_strings.dart';
 
 
 class Clear extends Operators {
@@ -61,21 +61,19 @@ class Parentheses extends Operators {
 class PlusMunsSign extends Operators {
   const PlusMunsSign();
 
-  static const dash = '-';
-
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
     var isNegative = calculatorModel.isNegative!;
     var finalResult = calculatorModel.finalResult!;
 
-    if (finalResult != AppConstants.zero) {
+    if (finalResult != AppStrings.zero) {
       isNegative = !isNegative;
       if (isNegative) {
-        finalResult = '$dash$finalResult';
+        finalResult = '-$finalResult';
         return calculatorModel.copyWith(
             isNegative: isNegative, finalResult: finalResult);
       } else {
-        if (finalResult.startsWith(dash)) {
+        if (finalResult.startsWith('-')) {
           finalResult = finalResult.substring(1);
           return calculatorModel.copyWith(
               isNegative: isNegative, finalResult: finalResult);
@@ -95,7 +93,7 @@ class Operator extends Operators {
     final n1 = calculatorModel.n1!;
 
     if (n1 != 0) {
-      return calculatorModel.copyWith(processes: process, result: AppConstants.empty);
+      return calculatorModel.copyWith(processes: process, result: AppStrings.empty);
     }
     return calculatorModel;
   }

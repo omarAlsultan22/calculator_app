@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/app_constants.dart';
 import '../../domain/usecases/base/operators_model.dart';
 import '../../domain/usecases/states/operators_states.dart';
 import '../../domain/usecases/states/processes_states.dart';
+import 'package:calculator/core/themes/calculator_theme.dart';
 
 
 class CalculatorLayout extends StatelessWidget {
@@ -14,6 +14,8 @@ class CalculatorLayout extends StatelessWidget {
     required this.displayValue,
     required this.buttonBuilder,
   }) : super(key: key);
+
+  static const _sizedBox = SizedBox(height: 10);
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +49,7 @@ class CalculatorLayout extends StatelessWidget {
       children: [
         Text(
           displayValue,
-          style: const TextStyle(
-            fontSize: AppConstants.displayFontSize,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+          style: CalculatorTheme.displayStyle,
         ),
       ],
     );
@@ -69,7 +67,7 @@ class CalculatorLayout extends StatelessWidget {
               const Operator(process: Division()),
             ]
         ),
-        AppConstants.sizedBox,
+        _sizedBox,
         _buildButtonRow(
             context,
             [
@@ -79,7 +77,7 @@ class CalculatorLayout extends StatelessWidget {
               const Operator(process: Multiplication()),
             ]
         ),
-        AppConstants.sizedBox,
+        _sizedBox,
         _buildButtonRow(
             context,
             [
@@ -89,7 +87,7 @@ class CalculatorLayout extends StatelessWidget {
               const Operator(process: Subtraction()),
             ]
         ),
-        AppConstants.sizedBox,
+        _sizedBox,
         _buildButtonRow(
           context,
           [
@@ -99,7 +97,7 @@ class CalculatorLayout extends StatelessWidget {
             const Operator(process: Addition()),
           ],
         ),
-        AppConstants.sizedBox,
+        _sizedBox,
         _buildButtonRow(
             context,
             [
@@ -109,7 +107,7 @@ class CalculatorLayout extends StatelessWidget {
               const Equal(),
             ]
         ),
-        AppConstants.sizedBox,
+        _sizedBox,
       ],
     );
   }

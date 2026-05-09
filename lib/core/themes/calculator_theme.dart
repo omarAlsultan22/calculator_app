@@ -1,10 +1,11 @@
+import '../constants/app_sizes.dart';
 import 'package:flutter/material.dart';
-import '../constants/app_constants.dart';
 import '../../domain/usecases/base/operators_model.dart';
+import 'package:calculator/core/constants/app_colors.dart';
 import '../../domain/usecases/states/operators_states.dart';
 
 
-mixin CalculatorTheme {
+abstract class CalculatorTheme {
   static Color getButtonColor(Operators operator) {
     switch (operator.runtimeType) {
       case Clear: return const Color(0xFFD32F2F);
@@ -24,6 +25,6 @@ mixin CalculatorTheme {
   static const buttonStyle = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: AppConstants.buttonFontSize,
-    color: AppConstants.textColor,
+    color: AppColors.textColor,
   );
 }
