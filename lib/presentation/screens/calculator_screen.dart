@@ -1,11 +1,11 @@
 import '../cubit/cubit.dart';
 import '../states/states.dart';
 import 'package:flutter/material.dart';
+import '../../constants/app_strings.dart';
 import '../layouts/calculator_layout.dart';
+import '../../themes/calculator_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../core/themes/calculator_theme.dart';
 import '../../domain/usecases/base/operators_model.dart';
-import 'package:calculator/core/constants/app_strings.dart';
 
 
 class CalculatorScreen extends StatelessWidget {

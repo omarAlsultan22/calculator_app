@@ -1,6 +1,6 @@
 import '../base/operators_model.dart';
+import '../../../constants/app_strings.dart';
 import '../../../data/models/calculator_model.dart';
-import 'package:calculator/core/constants/app_strings.dart';
 
 
 class Clear extends Operators {

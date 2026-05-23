@@ -1,7 +1,7 @@
 import '../constants/app_sizes.dart';
+import '../constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../../domain/usecases/base/operators_model.dart';
-import 'package:calculator/core/constants/app_colors.dart';
 import '../../domain/usecases/states/operators_states.dart';
 
 

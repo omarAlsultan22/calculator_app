@@ -1,4 +1,4 @@
-import 'package:calculator/core/constants/app_strings.dart';
+import '../../constants/app_strings.dart';
 import '../../domain/usecases/base/processes_model.dart';
 
 
