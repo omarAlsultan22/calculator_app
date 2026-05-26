@@ -1,5 +1,5 @@
-import '../cubit/cubit.dart';
-import '../states/states.dart';
+import '../cubit/calculator_cubit.dart';
+import '../states/calculator_states.dart';
 import 'package:flutter/material.dart';
 import '../../constants/app_strings.dart';
 import '../layouts/calculator_layout.dart';
