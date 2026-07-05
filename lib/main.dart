@@ -1,6 +1,5 @@
 import 'app/my_app.dart';
 import 'package:flutter/material.dart';
-import 'data/models/calculator_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:calculator/presentation/cubit/calculator_cubit.dart';
 
@@ -10,7 +9,7 @@ void main() {
       MultiBlocProvider(providers: [
         BlocProvider(
             create: (context) =>
-                CalculatorCubit(calculatorModel: CalculatorModel()))
+                CalculatorCubit())
       ], child: const MyApp(),)
   );
 }

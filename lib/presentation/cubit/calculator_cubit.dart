@@ -5,22 +5,20 @@ import '../../domain/usecases/base/operators_model.dart';
 
 
 class CalculatorCubit extends Cubit<CalculatorStates> {
-  final CalculatorModel _calculatorModel;
-
-  CalculatorCubit({required CalculatorModel calculatorModel})
-      : _calculatorModel = calculatorModel,
-        super(InitialState());
+  CalculatorCubit() :super(InitialState(calculatorModel: CalculatorModel()));
 
   static CalculatorCubit get(context) => BlocProvider.of(context);
 
-
   void getButtonResult(Operators operators) {
     try {
-      final result = operators.operator(_calculatorModel);
-      emit(SuccessState(value: result.finalResult));
+      final newCalculatorModel = operators.operator(state.calculatorModel);
+      emit(SuccessState(calculatorModel: newCalculatorModel));
     }
     catch (e) {
-      emit(ErrorState(value: e.toString()));
+      emit(ErrorState(
+          message: e.toString(),
+          calculatorModel: state.calculatorModel)
+      );
     }
   }
 }

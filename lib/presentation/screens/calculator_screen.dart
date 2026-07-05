@@ -1,7 +1,6 @@
 import '../cubit/calculator_cubit.dart';
-import '../states/calculator_states.dart';
 import 'package:flutter/material.dart';
-import '../../constants/app_strings.dart';
+import '../states/calculator_states.dart';
 import '../layouts/calculator_layout.dart';
 import '../../themes/calculator_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,12 +17,11 @@ class CalculatorScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: CalculatorLayout(
-            displayValue: (state is SuccessState) ? state.value! : AppStrings
-                .zero,
+            calculatorModel: state.calculatorModel,
             buttonBuilder: (context, operator) =>
                 _calculatorButton(
-                  operators: operator,
                   context: context,
+                  operators: operator,
                   backgroundColor: CalculatorTheme.getButtonColor(operator),
                 ),
           ),
@@ -36,7 +34,7 @@ class CalculatorScreen extends StatelessWidget {
     if (state is ErrorState) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(state.value!),
+          content: Text(state.message),
           backgroundColor: Colors.red.shade700,
         ),
       );
@@ -59,7 +57,7 @@ class CalculatorScreen extends StatelessWidget {
       shape: const CircleBorder(),
       padding: const EdgeInsets.all(20.0),
       child: Text(
-        operators.value!,
+        operators.value ?? '',
         style: CalculatorTheme.buttonStyle,
       ),
     );
