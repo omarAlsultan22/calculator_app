@@ -1,4 +1,5 @@
 import '../base/operators_model.dart';
+import '../../../utils/decimal_utils.dart';
 import '../../../constants/app_strings.dart';
 import '../../../data/models/calculator_model.dart';
 import 'package:calculator/utils/calculator_utils.dart';
@@ -25,16 +26,17 @@ class Equal extends Operators {
     if (n1 == null || n2 == null || calculatorModel.process == null) {
       return calculatorModel;
     }
-    final finalResult = CalculatorUtils.getResult(calculatorModel);
+    final result = CalculatorUtils.getResult(calculatorModel);
+    final finalResult = Decimal.doesDecimalContain(result.toString());
     try {
       return calculatorModel.copyWith(
-        n1: finalResult,
+        n1: result,
         n2: null,
         process: null,
-        result: AppStrings.empty,
         numbers: const [],
         processes: const [],
         parentheses: const [],
+        result: AppStrings.empty,
         finalResult: finalResult.toString(),
       );
     }
@@ -213,6 +215,7 @@ class Operator extends Operators {
           calculatorModel.n2 != null &&
           calculatorModel.process != null) {
         final result = CalculatorUtils.getResult(calculatorModel);
+        final finalResult = Decimal.doesDecimalContain(result.toString());
 
         if (value == 'x' || value == '/' || value == '%') {
           if (calculatorModel.process != process) {
@@ -221,7 +224,7 @@ class Operator extends Operators {
                 n2: null,
                 process: process,
                 result: AppStrings.empty,
-                finalResult: result.toString(),
+                finalResult: finalResult,
                 numbers: [
                   ...calculatorModel.numbers,
                   calculatorModel.n1!
@@ -238,7 +241,7 @@ class Operator extends Operators {
           n2: null,
           process: process,
           result: AppStrings.empty,
-          finalResult: result.toString(),
+          finalResult: finalResult,
         );
       }
       return calculatorModel.copyWith(
