@@ -50,32 +50,40 @@ class Parentheses extends Operators {
 
   @override
   CalculatorModel operator(CalculatorModel calculatorModel) {
+    final n1 = calculatorModel.n1;
+    final n2 = calculatorModel.n2;
+    final process = calculatorModel.process;
     var result = calculatorModel.result;
 
     try {
       if (!calculatorModel.parenthesesListIsEmpty &&
           calculatorModel.currentArc != calculatorModel.parenthesesListLength &&
-          calculatorModel.n2 != null ||
+          n2 != null ||
           !calculatorModel.parenthesesListIsEmpty &&
               calculatorModel.currentArc !=
-                  calculatorModel.parenthesesListLength &&
-              calculatorModel.n1 != null &&
-              calculatorModel.n2 == null &&
-              calculatorModel.process == null) {
+                  calculatorModel.parenthesesListLength && n1 != null &&
+              n2 == null && process == null) {
         result += ')';
       }
       else {
         const value = '(';
-        result == '' ? result = value : result += value;
+        result.isEmpty ? result = value : result += value;
+        final numbers = n1 != null
+            ? [...calculatorModel.numbers, n1]
+            : calculatorModel.numbers;
+        final processes = process != null ? [
+          ...calculatorModel.processes,
+          process
+        ] : calculatorModel.processes;
         return calculatorModel.copyWith(
             n1: null,
             n2: null,
             process: null,
             result: result,
             finalResult: result,
-            parentheses: [...calculatorModel.parentheses, value],
-            numbers: [...calculatorModel.numbers, calculatorModel.n1!],
-            processes: [...calculatorModel.processes, calculatorModel.process!]
+            numbers: numbers,
+            processes: processes,
+            parentheses: [...calculatorModel.parentheses, value]
         );
       }
       return calculatorModel.copyWith(
@@ -230,6 +238,7 @@ class Operator extends Operators {
           n2: null,
           process: process,
           result: AppStrings.empty,
+          finalResult: result.toString(),
         );
       }
       return calculatorModel.copyWith(

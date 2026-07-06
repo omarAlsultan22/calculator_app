@@ -67,17 +67,16 @@ class Modulus implements Processes{
 
 abstract class Decimal {
   static double doesDecimalContain(String result) {
-    double value = double.tryParse(result) ?? 0.0;
+    double value = double.parse(result);
 
     if (result.contains(AppStrings.decimal)) {
       List<String> splitDecimal = result.split(AppStrings.decimal);
-      if (splitDecimal.length > 1) {
-        int? decimalPart = int.tryParse(splitDecimal[1]);
-        if (decimalPart != null && decimalPart <= 0) {
-          return double.parse(splitDecimal[0]);
-        }
+      if (!(int.parse(splitDecimal[1]) > 0)) {
+        return double.parse(splitDecimal[0]);
       }
     }
     return value;
   }
 }
+
+

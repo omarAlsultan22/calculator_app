@@ -13,9 +13,9 @@ class CalculatorUtils {
     if (!calculatorModel.numbersIsEmpty) {
       for (int index = 0; index < calculatorModel.numbersListLength &&
           index < calculatorModel.processesListLength; index++) {
-        calculatorModel.copyWith(currentIndex: index);
-        final currentProcess = calculatorModel.currentProcess;
-        result = currentProcess.process(calculatorModel.currentNumber, result);
+        final newCalculatorModel = calculatorModel.copyWith(currentIndex: index);
+        final currentProcess = newCalculatorModel.currentProcess;
+        result = currentProcess.process(newCalculatorModel.currentNumber, result);
       }
     }
     return result;

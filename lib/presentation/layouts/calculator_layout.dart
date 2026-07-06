@@ -33,13 +33,15 @@ class CalculatorLayout extends StatelessWidget {
           stops: [0.0, 0.5, 1.0],
         ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          _buildDisplay(),
-          const SizedBox(height: 60.0),
-          _buildButtonRows(context),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            _buildDisplay(),
+            const SizedBox(height: 60.0),
+            _buildButtonRows(context),
+          ],
+        ),
       ),
     );
   }

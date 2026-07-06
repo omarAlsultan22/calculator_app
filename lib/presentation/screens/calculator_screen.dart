@@ -1,5 +1,6 @@
-import '../cubit/calculator_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import '../cubit/calculator_cubit.dart';
 import '../states/calculator_states.dart';
 import '../layouts/calculator_layout.dart';
 import '../../themes/calculator_theme.dart';
@@ -12,6 +13,10 @@ class CalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return BlocConsumer<CalculatorCubit, CalculatorStates>(
       listener: (context, state) => _statesListener(context, state),
       builder: (context, state) {
