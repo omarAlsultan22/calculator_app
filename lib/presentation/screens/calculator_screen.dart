@@ -11,30 +11,6 @@ import '../../domain/use_cases/base/operators_model.dart';
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
-    return BlocConsumer<CalculatorCubit, CalculatorStates>(
-      listener: (context, state) => _statesListener(context, state),
-      builder: (context, state) {
-        return Scaffold(
-          body: CalculatorLayout(
-            calculatorModel: state.calculatorModel,
-            buttonBuilder: (context, operator) =>
-                _calculatorButton(
-                  context: context,
-                  operators: operator,
-                  backgroundColor: CalculatorTheme.getButtonColor(operator),
-                ),
-          ),
-        );
-      },
-    );
-  }
-
   void _statesListener(BuildContext context, CalculatorStates state) {
     if (state is ErrorState) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -62,9 +38,32 @@ class CalculatorScreen extends StatelessWidget {
       shape: const CircleBorder(),
       padding: const EdgeInsets.all(20.0),
       child: Text(
-        operators.value ?? '',
+        operators.value,
         style: CalculatorTheme.buttonStyle,
       ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return BlocConsumer<CalculatorCubit, CalculatorStates>(
+        listener: (context, state) => _statesListener(context, state),
+        builder: (context, state) =>
+            Scaffold(
+              body: CalculatorLayout(
+                calculatorModel: state.calculatorModel,
+                buttonBuilder: (context, operator) =>
+                    _calculatorButton(
+                      context: context,
+                      operators: operator,
+                      backgroundColor: CalculatorTheme.getButtonColor(operator),
+                    ),
+              ),
+            )
     );
   }
 }
