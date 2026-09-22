@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../themes/calculator_theme.dart';
-import '../../domain/usecases/base/operators_model.dart';
-import '../../domain/usecases/states/operators_states.dart';
-import '../../domain/usecases/states/processes_states.dart';
+import '../../domain/use_cases/base/operators_model.dart';
+import '../../domain/use_cases/states/operators_states.dart';
+import '../../domain/use_cases/states/processes_states.dart';
 import 'package:calculator/data/models/calculator_model.dart';
 
 

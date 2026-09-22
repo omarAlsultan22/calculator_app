@@ -1,5 +1,5 @@
 import '../data/models/calculator_model.dart';
-import 'package:calculator/domain/usecases/calculator_service.dart';
+import 'package:calculator/domain/use_cases/calculator_service.dart';
 
 
 class CalculatorUtils {

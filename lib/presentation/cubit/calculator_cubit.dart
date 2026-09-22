@@ -1,7 +1,7 @@
 import '../states/calculator_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/models/calculator_model.dart';
-import '../../domain/usecases/base/operators_model.dart';
+import '../../domain/use_cases/base/operators_model.dart';
 
 
 class CalculatorCubit extends Cubit<CalculatorStates> {

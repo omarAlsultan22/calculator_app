@@ -1,5 +1,5 @@
 import '../../../data/models/calculator_model.dart';
-import 'package:calculator/domain/usecases/base/processes_model.dart';
+import 'package:calculator/domain/use_cases/base/processes_model.dart';
 
 
 abstract class Operators {

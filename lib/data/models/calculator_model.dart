@@ -1,6 +1,6 @@
 import '../../constants/app_strings.dart';
-import '../../domain/usecases/base/processes_model.dart';
-import 'package:calculator/domain/usecases/calculator_service.dart';
+import '../../domain/use_cases/base/processes_model.dart';
+import 'package:calculator/domain/use_cases/calculator_service.dart';
 
 
 class CalculatorModel {
