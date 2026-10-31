@@ -10,7 +10,9 @@ void main() {
         BlocProvider(
             create: (context) =>
                 CalculatorCubit())
-      ], child: const MyApp(),)
+      ],
+        child: const MyApp(),
+      )
   );
 }
 
